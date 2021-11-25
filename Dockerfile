@@ -1,4 +1,4 @@
-FROM golang:latest as builder
+FROM golang:1.15.2 as builder
 
 # Application working directory ( Created if it doesn't exist )
 WORKDIR /build
@@ -27,5 +27,3 @@ COPY --from=builder /build/main /app/
 EXPOSE 8080
 # Run software with any arguments
 ENTRYPOINT ["./main"]
-
-
