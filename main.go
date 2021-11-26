@@ -36,7 +36,7 @@ func errorHandler(w http.ResponseWriter, r *http.Request, status int) {
 }
 
 func helloWorld(w http.ResponseWriter, r *http.Request) {
-	html := "Hello World!"
+	html := "Hello World! Now updated with CircleCI"
 	if r.URL.Path != "/" {
 		errorHandler(w, r, http.StatusNotFound)
 		return
@@ -61,4 +61,3 @@ func main() {
 	mux.Handle("/metrics", metrics)
 	http.ListenAndServe(":8080", RequestLogger(mux))
 }
-
